@@ -5859,8 +5859,19 @@ nav.navbar {
     margin-bottom: 10px; }
     .file-item .content i {
       color: #555555; }
+    .file-item .content a {
+      cursor: pointer; }
     .file-item .content .capitalize {
       text-transform: capitalize; }
+
+.type {
+  border-bottom-style: solid;
+  border-bottom-color: rgba(171, 171, 171, 0.41);
+  border-bottom-width: 1px;
+  margin-bottom: 5px;
+  cursor: pointer; }
+  .type .content {
+    margin-bottom: 5px; }
 
 .list-group-item:first-child,
 .list-group-item:last-child {
