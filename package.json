@@ -1,0 +1,28 @@
+{
+  "name": "isite",
+  "version": "1.0.0",
+  "description": "Dashboard for isite - showcase of skills",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mandarini/homework.git"
+  },
+  "keywords": [
+    "homework",
+    "api",
+    "tests"
+  ],
+  "author": "Katerina",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/mandarini/homework/issues"
+  },
+  "homepage": "https://github.com/mandarini/homework#readme",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "http-server": "^0.10.0"
+  }
+}
