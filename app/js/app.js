@@ -1,22 +1,47 @@
 'use strict';
 
-var myApp = angular.module('iSite', [
+var iSite = angular.module('iSite', [
     'ngRoute',
     'ui.router',
     'ui.bootstrap',
-    'myApp.home'
+    'iSite.home'
 ]);
 
-myApp.config(function($stateProvider, $urlRouterProvider) {
+iSite.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
 });
 
-myApp.controller('AppCtrl', function($scope, $log, $state, $rootScope, $location) {
+iSite.controller('AppCtrl', function($scope, $log, $state, $rootScope, $location) {
     $scope.$state = $state;
     $scope.fullDate = "MMM dd, y 'at' HH:mm:ss";
+
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    $scope.navClass = function(page) {
+        var currentRoute = $location.path().substring(1);
+        return page === currentRoute ? 'active' : '';
+    };
+
+    /*
+    Here I am making a lookup table
+    The key is the genre id (given in the movie details) and the value is the genre name.
+    This was, with only one API call, I can retrieve the genre name, in order to display it in the movie overview.
+    */
+    // GenresService.GetGenres('en-US', function(genres) {
+    //     $scope.genres = genres.genres;
+    //     $rootScope.genreslookup = [];
+    //     for (var i = 0; i < $scope.genres.length; i++) {
+    //         $rootScope.genreslookup[$scope.genres[i].id] = $scope.genres[i].name;
+    //     };
+    // });
+
+    $scope.shrinked = false;
+
 });
 
-myApp.filter('millSecondsToTimeString', function() {
+iSite.filter('millSecondsToTimeString', function() {
     return function(millseconds) {
         var oneSecond = 1000;
         var oneMinute = oneSecond * 60;
@@ -47,7 +72,7 @@ myApp.filter('millSecondsToTimeString', function() {
 });
 
 
-myApp.filter('millSecondsToMinutes', function() {
+iSite.filter('millSecondsToMinutes', function() {
     return function(millseconds) {
         var oneSecond = 1000;
         var oneMinute = oneSecond * 60;
@@ -75,7 +100,7 @@ myApp.filter('millSecondsToMinutes', function() {
 });
 
 
-myApp.filter('millSecondsToYears', function() {
+iSite.filter('millSecondsToYears', function() {
     return function(millseconds) {
         var oneSecond = 1000;
         var oneMinute = oneSecond * 60;

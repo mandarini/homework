@@ -1,3 +1,3 @@
 var config = {
-  backendUrl: '',
+  backendUrl: 'http://localhost:3001',
 }

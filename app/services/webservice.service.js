@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('iSite')
   .factory('WebService', function(){
     var apiUrl = config.backendUrl;
     var service = {};
