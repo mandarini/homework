@@ -1,26 +1,30 @@
 <div class="container">
-  <div class="row head">
+  <div class="row site-head">
     <div class="col-md-2">
       <img src="img/default.jpg" alt="Some Image" class="img-responsive">
     </div>
     <div class="col-md-10">
-      <h2>Programmes Dr Who</h2>
+      <h2>Programmes - Dr Who</h2>
       <p>This project has {{users.length}} users and 11 admins.</p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8">
       <h3>Latest Content</h3>
-      <div class="custom panel panel-default">
+      <div id="main-panel" class="custom panel panel-default">
          <nav class="content-nav">
            <a ng-class="{'active': query == 'my'}" ng-click="loadFiles('my')">My Content</a>
            <a ng-class="{'active': query == 'all'}" ng-click="loadFiles('all')">All</a>
            <a ng-class="{'active': query == 'pub'}" ng-click="loadFiles('pub')">Published</a>
          </nav>
-         <list-item ng-repeat="file in files" item="file"></list-item>
+         <div class="collapsible" id="file-list">
+           <list-item ng-repeat="file in files | limitTo: limit" item="file"></list-item>
+         </div>
+         <a ng-if="collapsed" type="button" class="btn btn-primary btn-viewall" name="button" ng-click="viewAll(undefined)">View all content</a>
+         <a ng-if="!collapsed" type="button" class="btn btn-primary btn-viewall" name="button" ng-click="viewAll(5)">Collapse</a>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 custom panel panel-default">
       <h3>File Types</h3>
     </div>
   </div>

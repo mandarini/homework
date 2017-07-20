@@ -5817,23 +5817,27 @@ main {
   margin: 0;
   padding: 0; }
 
-.separator {
-  height: 30px; }
+.site-head {
+  margin: 40px 0; }
 
-.nav-padding {
-  padding-top: 9px;
-  padding-bottom: 0; }
-
-.head {
-  margin: 40px 0px 40px 0px; }
-
-.custom {
-  padding: 20px;
-  border: 0px;
-  border-radius: 0px;
+.custom.panel {
+  padding: 0 20px 20px;
+  border: 0;
+  border-radius: 0;
   border-top-style: solid;
   border-top-color: #337ab7;
-  border-top-width: 2px; }
+  border-top-width: 2px;
+  height: auto;
+  -webkit-transition: height 1s ease-in;
+  transition: height 1s ease-in; }
+  .custom.panel .btn-viewall {
+    width: 100%;
+    background-color: #777777;
+    border-top-color: #777777; }
+  .custom.panel .collapsible {
+    -webkit-transition: height 1s ease-in;
+    /* Safari */
+    transition: height 1s ease-in; }
 
 /*logo image for navbar*/
 nav.navbar {
@@ -5844,6 +5848,7 @@ nav.navbar {
     padding-top: 0; }
 
 .content-nav {
+  margin-top: 20px;
   margin-bottom: 20px; }
   .content-nav .active {
     text-decoration: underline;

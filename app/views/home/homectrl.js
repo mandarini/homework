@@ -14,9 +14,13 @@ angular.module('iSite.home', ['ngRoute', 'ui.router'])
 
   .controller('HomeCtrl', function($scope, $location, FilesService, TypesService, UsersService) {
 
+    $scope.collapsed = true;
+    $scope.limit = 5;
+
     FilesService.GetFiles('', function(files) {
       $scope.files = files;
       console.log('files are', files);
+      console.log($("#file-list").height());
     });
 
     FilesService.GetFiles('46b3f5c4-2917-5059-a3f0-84727d8a5a48', function(files) {
@@ -47,6 +51,24 @@ angular.module('iSite.home', ['ngRoute', 'ui.router'])
     $scope.loadFiles = function(query) {
       console.log('hello');
       $scope.query = query;
+    }
+
+    $scope.viewAll = function(limit) {
+      console.log($("#main-panel").css('height'));
+      // document.getElementById("main-panel").style.height = $("#main-panel").css('height');
+      // document.getElementById("file-list").style.height = $("#file-list").css('height');
+      $scope.limit = limit;
+      if (limit) {
+        $scope.collapsed = true;
+      } else {
+        $scope.collapsed = false;
+      }
+      setTimeout(function(){
+         console.log($("#file-list").height());
+         console.log($("#main-panel").css('height'));
+        //  document.getElementById("main-panel").style.height = $("#main-panel").css('height');
+         document.getElementById("file-list").style.height =  $("#file-list").css('height');
+       }, 100);
     }
 
   });

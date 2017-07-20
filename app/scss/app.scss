@@ -1,60 +1,70 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=greek';
 @import "customVariables";
+@import "animations";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 $navbar-height: 60px;
 $viewport-height: 91vh;
 
 body {
-    padding-top: $navbar-height;
-    background-color: rgba(240, 240, 240, 0.84);
+  padding-top: $navbar-height;
+  background-color: rgba(240, 240, 240, 0.84);
 }
 
 main {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.separator {
-    height: 30px;
+.site-head {
+  margin: 40px 0;
 }
 
-.nav-padding {
-    padding-top: 9px;
-    padding-bottom: 0;
-}
-
-.head {
-  margin: 40px 0px 40px 0px;
-}
-
-.custom {
-  padding: 20px;
-  border: 0px;
-  border-radius: 0px;
+.custom.panel {
+  padding: 0 20px 20px;
+  border: 0;
+  border-radius: 0;
   border-top-style: solid;
   border-top-color: $brand-primary;
   border-top-width: 2px;
+  height: auto;
+  -webkit-transition: height 1s ease-in;
+  transition: height 1s ease-in;
+
+  .btn-viewall {
+    width: 100%;
+    background-color: $gray-light;
+    border-top-color: $gray-light;
+  }
+  .collapsible {
+    -webkit-transition: height 1s ease-in; /* Safari */
+     transition: height 1s ease-in;
+  }
+
 }
+
 
 /*logo image for navbar*/
 nav.navbar {
-    height: $navbar-height;
-    padding-left: 10px;
+  height: $navbar-height;
+  padding-left: 10px;
 
-    .navbar-brand {
-        padding-bottom: 0;
-        padding-top: 0;
-    }
+  .navbar-brand {
+    padding-bottom: 0;
+    padding-top: 0;
   }
+}
 
 .content-nav {
+  margin-top: 20px;
+
   .active {
     text-decoration: underline;
     font-weight: bold;
   }
   margin-bottom: 20px;
+
   a {
     padding-right: 15px;
     cursor: pointer;
@@ -63,27 +73,19 @@ nav.navbar {
 
 .list-group-item:first-child,
 .list-group-item:last-child {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
-
 /*
 MEDIA QUERIES
 
 Very small screens
 */
-@media screen and (max-width: $screen-sm) {
-
-}
-
+@media screen and (max-width: $screen-sm) {}
 /*
 Small screens
 */
-@media screen and (max-width: $screen-md) and (min-width: $screen-sm) {
-
-}
-
+@media screen and (max-width: $screen-md) and (min-width: $screen-sm) {}
 /*
 Medium and Large screens
 */
-@media screen and (min-width: $screen-md) {
-}
+@media screen and (min-width: $screen-md) {}
