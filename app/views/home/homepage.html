@@ -1,9 +1,27 @@
 <div class="container">
+  <div class="row head">
+    <div class="col-md-2">
+      <img src="img/default.jpg" alt="Some Image" class="img-responsive">
+    </div>
+    <div class="col-md-10">
+      <h2>Programmes Dr Who</h2>
+      <p>This project has {{users.length}} users and 11 admins.</p>
+    </div>
+  </div>
   <div class="row">
-    <div class="col-md-12">
-        <div ng-repeat="movie in nowPlaying">
-            <movie-detail movie="movie"></movie-detail>
-        </div>
+    <div class="col-md-8">
+      <h3>Latest Content</h3>
+      <div class="custom panel panel-default">
+         <nav class="content-nav">
+           <a ng-class="{'active': query == 'my'}" ng-click="loadFiles('my')">My Content</a>
+           <a ng-class="{'active': query == 'all'}" ng-click="loadFiles('all')">All</a>
+           <a ng-class="{'active': query == 'pub'}" ng-click="loadFiles('pub')">Published</a>
+         </nav>
+         <list-item ng-repeat="file in files" item="file"></list-item>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>File Types</h3>
     </div>
   </div>
 </div>

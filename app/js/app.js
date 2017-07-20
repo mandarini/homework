@@ -15,10 +15,6 @@ iSite.controller('AppCtrl', function($scope, $log, $state, $rootScope, $location
     $scope.$state = $state;
     $scope.fullDate = "MMM dd, y 'at' HH:mm:ss";
 
-    $(document).ready(function() {
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-
     $scope.navClass = function(page) {
         var currentRoute = $location.path().substring(1);
         return page === currentRoute ? 'active' : '';
