@@ -9,6 +9,7 @@ function ListItemController($rootScope, $scope, UsersService) {
       UsersService.GetUsers(ctrl.item.modifiedBy, function(user) {
         ctrl.user = user;
       });
+
     }
     ctrl.exp = false;
     ctrl.expand = function() {
