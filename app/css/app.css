@@ -5873,9 +5873,8 @@ nav.navbar {
   .type .content {
     margin-bottom: 5px; }
 
-.list-group-item:first-child,
-.list-group-item:last-child {
-  margin-bottom: 30px; }
+div.type:last-of-type {
+  border-bottom-width: 0px; }
 
 /*
 MEDIA QUERIES
