@@ -28,18 +28,11 @@ main {
   border-top-style: solid;
   border-top-color: $brand-primary;
   border-top-width: 2px;
-  height: auto;
-  -webkit-transition: height 1s ease-in;
-  transition: height 1s ease-in;
 
   .btn-viewall {
     width: 100%;
     background-color: $gray-light;
     border-top-color: $gray-light;
-  }
-  .collapsible {
-    -webkit-transition: height 1s ease-in; /* Safari */
-     transition: height 1s ease-in;
   }
 
 }
@@ -68,6 +61,25 @@ nav.navbar {
   a {
     padding-right: 15px;
     cursor: pointer;
+  }
+}
+
+.file-item {
+  border-bottom-style: solid;
+  border-bottom-color: rgba(171, 171, 171, 0.41);
+  border-bottom-width: 1px;
+  margin-bottom: 10px;
+
+
+
+  .content {
+    margin-bottom: 10px;
+    i {
+      color: $gray;
+    }
+    .capitalize {
+      text-transform: capitalize;
+    }
   }
 }
 

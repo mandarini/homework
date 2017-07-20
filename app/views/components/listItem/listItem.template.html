@@ -1,3 +1,13 @@
-<div class="">
-{{$ctrl.item.title}}
+<div class="file-item">
+  <div class="content">
+    <h4><a ng-click="$ctrl.expand()"><strong>{{$ctrl.item.title}}</strong></a></h4>
+    <p>
+      <i ng-if="$ctrl.item.status == 'In progress'" class="fa fa-circle-o-notch fa-spin fa-fw"></i>
+      <i ng-if="$ctrl.item.status == 'For review'" class="fa fa-comments"></i>
+      <i ng-if="$ctrl.item.status == 'Approved'" class="fa fa-check"></i>
+      <i ng-if="$ctrl.item.status == 'Scheduled'" class="fa fa-clock-o"></i>
+      <i ng-if="$ctrl.item.status == 'Published'" class="fa fa-circle"></i>
+      <strong><span class="capitalize">{{$ctrl.item.type}}</span></strong> modified by <strong>{{$ctrl.user.givenName}} {{$ctrl.user.familyName}}</strong> on - {{$ctrl.item.status}}
+    </p>
+  </div>
 </div>

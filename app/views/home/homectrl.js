@@ -54,21 +54,13 @@ angular.module('iSite.home', ['ngRoute', 'ui.router'])
     }
 
     $scope.viewAll = function(limit) {
-      console.log($("#main-panel").css('height'));
-      // document.getElementById("main-panel").style.height = $("#main-panel").css('height');
-      // document.getElementById("file-list").style.height = $("#file-list").css('height');
       $scope.limit = limit;
       if (limit) {
         $scope.collapsed = true;
       } else {
         $scope.collapsed = false;
       }
-      setTimeout(function(){
-         console.log($("#file-list").height());
-         console.log($("#main-panel").css('height'));
-        //  document.getElementById("main-panel").style.height = $("#main-panel").css('height');
-         document.getElementById("file-list").style.height =  $("#file-list").css('height');
-       }, 100);
+
     }
 
   });
