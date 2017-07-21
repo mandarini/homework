@@ -4,6 +4,7 @@ var iSite = angular.module('iSite', [
     'ngRoute',
     'ui.router',
     'ui.bootstrap',
+    'ngAnimate',
     'iSite.home'
 ]);
 
@@ -113,4 +114,13 @@ iSite.filter('millSecondsToYears', function() {
 
         return timeString;
     };
+});
+
+iSite.filter('range', function() {
+  return function(input, total) {
+    total = parseInt(total);
+    for (var i=0; i<total; i++)
+      input.push(i);
+    return input;
+  };
 });
