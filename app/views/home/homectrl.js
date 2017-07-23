@@ -31,7 +31,7 @@ angular.module('iSite.home', ['ngRoute', 'ui.router'])
 
         $rootScope.LoadUsers = function() {
             UsersService.GetUsers(function(users, mapped) {
-                if (users.status == 200) {
+                if (users.status == 200 || users.status == 304 ) {
                     $scope.users = users.data;
                     $scope.mapped = mapped;
                     console.log('mapped', mapped);

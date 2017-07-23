@@ -15,9 +15,9 @@
       <h3>Latest Content</h3>
       <div id="main-panel" class="custom panel panel-default">
          <nav class="content-nav">
-           <a ng-class="{'active': query == 'my'}" ng-click="loadFiles('my')">My Content</a>
-           <a ng-class="{'active': query == 'all'}" ng-click="loadFiles('all')">All</a>
-           <a ng-class="{'active': query == 'pub'}" ng-click="loadFiles('pub')">Published</a>
+           <a ng-class="{'active': query == 'my'}" ng-click="loadFiles('')">My Content</a>
+           <a ng-class="{'active': query == 'all'}" ng-click="loadFiles('')">All</a>
+           <a ng-class="{'active': query == 'pub'}" ng-click="loadFiles('Published')">Published</a>
          </nav>
          <p ng-if="loading" class="text-center"><i class="fa fa-spinner fa-pulse fa-fw"></i> Loading</p>
          <div ng-if="users" class="collapsible" id="file-list">

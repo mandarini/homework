@@ -23,13 +23,7 @@ iSite.controller('AppCtrl', function($scope, $log, $state, $rootScope, $location
     $scope.shrinked = false;
 
     $scope.loadFiles = function(query) {
-        if (query=='pub') {
-          $scope.filter = 'Published';
-        } else if (query=='article' || query=='profile') {
           $scope.filter = query;
-        } else {
-          $scope.filter = '';
-        }
     }
 });
 

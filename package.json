@@ -1,31 +1,49 @@
 {
-  "name": "isite",
-  "version": "1.0.0",
-  "description": "Dashboard for isite - showcase of skills",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "bower install",
-    "prestart": "npm install",
-    "start": "http-server -a 0.0.0.0 -p 8000 --cors -c-1 ./app"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mandarini/homework.git"
-  },
-  "keywords": [
-    "homework",
-    "api",
-    "tests"
-  ],
-  "author": "Katerina",
-  "license": "none",
-  "bugs": {
-    "url": "https://github.com/mandarini/homework/issues"
-  },
-  "homepage": "https://github.com/mandarini/homework#readme",
-  "dependencies": {
-    "bower": "^1.8.0",
-    "http-server": "^0.10.0"
-  }
+    "name": "isite",
+    "version": "1.0.0",
+    "description": "Dashboard for isite - showcase of skills",
+    "main": "index.js",
+    "devDependencies": {
+        "jasmine-core": "^2.4.1",
+        "karma": "^0.13.22",
+        "karma-chrome-launcher": "^0.2.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-jasmine": "^0.3.8",
+        "protractor": "^4.0.9"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "postinstall": "bower install",
+        "prestart": "npm install",
+        "start": "http-server -a 0.0.0.0 -p 8000 --cors -c-1 ./app",
+
+        "pretest": "npm install",
+        "test": "karma start karma.conf.js",
+        "test-single-run": "karma start karma.conf.js --single-run",
+
+        "preupdate-webdriver": "npm install",
+        "update-webdriver": "webdriver-manager update",
+
+        "preprotractor": "npm run update-webdriver",
+        "protractor": "protractor e2e-tests/protractor.conf.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mandarini/homework.git"
+    },
+    "keywords": [
+        "homework",
+        "api",
+        "tests"
+    ],
+    "author": "Katerina",
+    "license": "none",
+    "bugs": {
+        "url": "https://github.com/mandarini/homework/issues"
+    },
+    "homepage": "https://github.com/mandarini/homework#readme",
+    "dependencies": {
+        "bower": "^1.8.0",
+        "http-server": "^0.10.0"
+    }
 }
