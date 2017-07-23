@@ -33,9 +33,9 @@ As described above, the slow response from the users endpoint is handle in the f
 
 ## Technologies used
 
-* Due to limited time, I opted to use *AngularJS* (1.6), with which I am most accustomed.
-* I used *SASS* for CSS preprocessing.
-* I used *Bootstrap* for the UI.
+* Due to limited time, I opted to use [AngularJS](https://angularjs.org/) (1.6.5), with which I am most accustomed.
+* I used [Sass](http://sass-lang.com/) for CSS preprocessing.
+* I used [Bootstrap](http://getbootstrap.com/) v 3.3.7 for the UI.
 * I used *karma* and *protractor* for testing.
 
 ## Testing
@@ -50,3 +50,18 @@ You will notice that the testing implementation is incomplete. I am not very ski
 * npm start
 * npm test
 * npm run protractor
+
+## Prerequisites
+
+### npm
+
+The project uses the [npm](https://www.npmjs.com/) package manager.
+* To run `npm` you will need [Node.js](https://nodejs.org/en/download/) installed on your system.
+* You will need to update npm to its latest version, running `npm install npm@latest -g`.
+
+### bower
+The project also uses the [bower](https://bower.io/) package manager. Bower can be installed with npm. You should run `npm install bower`.
+
+### sass
+The project, as mentioned, also uses Sass for CSS preprocessing. In order to install Sass, you will need [Ruby](https://www.ruby-lang.org/en/documentation/installation/) to be installed on your system. If you are using Mac, Ruby comes preinstalled.
+To install Sass, you can run `sudo gem install sass`.
