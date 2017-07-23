@@ -5809,7 +5809,7 @@ button.close {
     display: none !important; } }
 body {
   padding-top: 60px;
-  background-color: rgba(240, 240, 240, 0.84); }
+  background-color: rgba(222, 222, 222, 0.84); }
 
 main {
   width: 100%;
@@ -5832,17 +5832,23 @@ main {
     background-color: #777777;
     border-top-color: #777777; }
 
-/*logo image for navbar*/
-nav.navbar {
-  height: 60px;
-  padding-left: 10px; }
-  nav.navbar .navbar-brand {
-    padding-bottom: 0;
-    padding-top: 0; }
-  nav.navbar .full-width {
-    width: 70%; }
-  nav.navbar .expand {
-    width: 70%; }
+nav.navbar .brand-logo {
+  height: 38px;
+  padding-bottom: 10px; }
+nav.navbar .full-width {
+  width: 70%; }
+  nav.navbar .full-width .expand {
+    width: 90%; }
+  nav.navbar .full-width .form-control {
+    background-color: rgba(255, 255, 255, 0.51);
+    border: none; }
+    nav.navbar .full-width .form-control ::-webkit-input-placeholder {
+      color: white; }
+    nav.navbar .full-width .form-control ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: white; }
+    nav.navbar .full-width .form-control input::placeholder {
+      color: white; }
 
 .content-nav {
   margin-top: 20px;
@@ -5878,7 +5884,7 @@ nav.navbar {
     margin-bottom: 5px; }
 
 div.type:last-of-type {
-  border-bottom-width: 0px; }
+  border-bottom-width: 0; }
 
 /*
 MEDIA QUERIES

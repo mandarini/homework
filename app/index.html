@@ -32,20 +32,19 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                          <span class="sr-only">Toggle navigation</span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                      </button>
-                    <a id='logo' class="navbar-brand" ui-sref="home">
-                        <img alt="iSite Logo" class='brand-logo img-responsive pull-left' src="img/logo.png">
-                    </a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" ui-sref="home"><img alt="iSite Logo" class='brand-logo' src="img/logo.png"></a>
+                    <p class="navbar-text" style="color: white;">iSite Dashboard</p>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar">
                     <div class="navbar-form">
                         <div class="form-group full-width">
-                            <input type="text" class="form-control expand" placeholder="Programmers - Dr Who" ng-model="filter">
+                            <input type="text" class="form-control expand" placeholder="Programmes - Dr Who" ng-model="filter">
                         </div>
                     </div>
                 </div>
