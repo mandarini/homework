@@ -9,16 +9,17 @@
       <i ng-if="$ctrl.item.status == 'Scheduled'" class="fa fa-clock-o"></i>
       <i ng-if="$ctrl.item.status == 'Published'" class="fa fa-circle"></i>
       <strong><span class="capitalize">{{$ctrl.item.type}}</span></strong>
-      modified by <strong>{{$ctrl.user.givenName}} {{$ctrl.user.familyName}}</strong>
+      modified by <strong>{{$ctrl.user}}</strong>
       on <strong>{{$ctrl.item.modifiedDateTime | date: 'medium'}}</strong> - {{$ctrl.item.status}}
     </p>
     <div uib-collapse="$ctrl.isCollapsed">
       <div class="well well-lg">
-        <p>This {{$ctrl.item.type}} was created on <strong>{{$ctrl.item.creationDateTime | date: 'medium'}}</strong> by <strong>{{$ctrl.created.givenName}} {{$ctrl.created.familyName}}</strong>.</p>
+        <p>This {{$ctrl.item.type}} was created on <strong>{{$ctrl.item.creationDateTime | date: 'medium'}}</strong> by <strong>{{$ctrl.created}}</strong>.</p>
         <p>It is <span ng-if="!$ctrl.item.scheduled"><strong>not</strong></span> scheduled.</p>
         <p>It is <span ng-if="!$ctrl.item.live"><strong>not</strong></span> live.</p>
         <p>It's on version <strong>{{$ctrl.item.version}}</strong></span>.</p>
-        <p ng-if="$ctrl.item.popularity">Popularity: <span><i ng-repeat="n in [] | range: $ctrl.item.popularity" class="fa fa-star" aria-hidden="true">&nbsp</i></span> ({{$ctrl.item.popularity}})</p>
+        <p ng-if="$ctrl.item.popularity">Popularity:
+          <span><i ng-repeat="n in [] | range: $ctrl.item.popularity" class="fa fa-star" aria-hidden="true">&nbsp</i></span> ({{$ctrl.item.popularity}})</p>
         <p ng-if="!$ctrl.item.popularity">It is not popular.</p>
         <p></p>
       </div>

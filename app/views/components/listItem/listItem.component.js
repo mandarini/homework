@@ -1,23 +1,24 @@
-function ListItemController($rootScope, $scope, UsersService) {
+function ListItemController($rootScope, $scope) {
     var ctrl = this;
     ctrl.$postLink = postLink;
     /*
-    Make the request after the controller's element
+    Make any requests after the controller's element
     and its children have been linked and I can access the "item" object
     */
     ctrl.isCollapsed = true;
 
     function postLink() {
-      UsersService.GetUsers(ctrl.item.modifiedBy, function(user) {
-        ctrl.user = user;
-      });
-      UsersService.GetUsers(ctrl.item.createdBy, function(user) {
-        ctrl.created = user;
-      });
-    }
-    ctrl.exp = false;
-    ctrl.expand = function() {
-
+        /*
+        If a user with the modifiedBy id does not exist OR a user with the createdBy id
+        does not exist, this means that our user table has been update.
+        So, we load it again.
+        */
+        if ((!ctrl.users.has(ctrl.item.modifiedBy)) || (!ctrl.users.has(ctrl.item.createdBy))) {
+            $rootScope.LoadUsers();
+        } else {
+            ctrl.user = ctrl.users.get(ctrl.item.modifiedBy);
+            ctrl.created = ctrl.users.get(ctrl.item.createdBy);
+        }
     }
 }
 
@@ -28,6 +29,6 @@ angular.module('iSite')
         controller: ListItemController,
         bindings: {
             item: '=',
-            fileid: '='
+            users: '='
         }
     });

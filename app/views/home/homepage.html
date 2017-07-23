@@ -5,7 +5,9 @@
     </div>
     <div class="col-md-10">
       <h2>Programmes - Dr Who</h2>
-      <p>This project has {{users.length}} users and 11 admins.</p>
+      <p ng-if="users">This project has {{users.length}} users and 11 admins.</p>
+      <p ng-if="loading"><i class="fa fa-spinner fa-pulse fa-fw"></i> Calculating</p>
+      <p ng-if="!users && !loading">No data available for users. This project has 11 admins.</p>
     </div>
   </div>
   <div class="row">
@@ -17,8 +19,12 @@
            <a ng-class="{'active': query == 'all'}" ng-click="loadFiles('all')">All</a>
            <a ng-class="{'active': query == 'pub'}" ng-click="loadFiles('pub')">Published</a>
          </nav>
-         <div class="collapsible" id="file-list">
-           <list-item ng-repeat="file in files | limitTo: limit" item="file" fileid='file.id'></list-item>
+         <p ng-if="loading" class="text-center"><i class="fa fa-spinner fa-pulse fa-fw"></i> Loading</p>
+         <div ng-if="users" class="collapsible" id="file-list">
+           <list-item ng-repeat="file in files | limitTo: limit" item="file" users='mapped'></list-item>
+         </div>
+         <div ng-if="!users && !loading" class="collapsible" id="file-list">
+           <list-item ng-repeat="file in files | limitTo: limit" item="file" users='false'></list-item>
          </div>
          <a ng-if="collapsed" type="button" class="btn btn-primary btn-viewall" name="button" ng-click="viewAll(undefined)">View all content</a>
          <a ng-if="!collapsed" type="button" class="btn btn-primary btn-viewall" name="button" ng-click="viewAll(5)">Collapse</a>
