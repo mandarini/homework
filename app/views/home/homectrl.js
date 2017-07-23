@@ -19,6 +19,7 @@ angular.module('iSite.home', ['ngRoute', 'ui.router'])
 
         FilesService.GetFiles('', function(files) {
             $scope.files = files;
+            console.log(files);
         });
 
         TypesService.GetTypes('', function(types) {
@@ -45,7 +46,11 @@ angular.module('iSite.home', ['ngRoute', 'ui.router'])
         $rootScope.LoadUsers();
 
         $scope.loadFiles = function(query) {
-            $scope.query = query;
+            if (query=='pub') {
+              $scope.filter = 'Published';
+            } else {
+              $scope.filter = '';
+            }
         }
 
         $scope.viewAll = function(limit) {
