@@ -20,22 +20,17 @@ iSite.controller('AppCtrl', function($scope, $log, $state, $rootScope, $location
         var currentRoute = $location.path().substring(1);
         return page === currentRoute ? 'active' : '';
     };
-
-    /*
-    Here I am making a lookup table
-    The key is the genre id (given in the movie details) and the value is the genre name.
-    This was, with only one API call, I can retrieve the genre name, in order to display it in the movie overview.
-    */
-    // GenresService.GetGenres('en-US', function(genres) {
-    //     $scope.genres = genres.genres;
-    //     $rootScope.genreslookup = [];
-    //     for (var i = 0; i < $scope.genres.length; i++) {
-    //         $rootScope.genreslookup[$scope.genres[i].id] = $scope.genres[i].name;
-    //     };
-    // });
-
     $scope.shrinked = false;
 
+    $scope.loadFiles = function(query) {
+        if (query=='pub') {
+          $scope.filter = 'Published';
+        } else if (query=='article' || query=='profile') {
+          $scope.filter = query;
+        } else {
+          $scope.filter = '';
+        }
+    }
 });
 
 iSite.filter('millSecondsToTimeString', function() {

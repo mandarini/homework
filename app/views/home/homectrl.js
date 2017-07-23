@@ -45,25 +45,15 @@ angular.module('iSite.home', ['ngRoute', 'ui.router'])
 
         $rootScope.LoadUsers();
 
-        $scope.loadFiles = function(query) {
-            if (query=='pub') {
-              $scope.filter = 'Published';
-            } else if (query=='article' || query=='profile') {
-              $scope.filter = query;
-            } else {
-              $scope.filter = '';
-            }
-        }
+
 
         $scope.viewAll = function(limit) {
-
             $scope.limit = limit;
             if (limit) {
                 $scope.collapsed = true;
             } else {
                 $scope.collapsed = false;
             }
-
         }
 
     });

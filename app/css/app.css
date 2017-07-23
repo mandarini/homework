@@ -5839,6 +5839,10 @@ nav.navbar {
   nav.navbar .navbar-brand {
     padding-bottom: 0;
     padding-top: 0; }
+  nav.navbar .full-width {
+    width: 70%; }
+  nav.navbar .expand {
+    width: 70%; }
 
 .content-nav {
   margin-top: 20px;
