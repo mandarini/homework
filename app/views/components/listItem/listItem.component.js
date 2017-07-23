@@ -13,12 +13,14 @@ function ListItemController($rootScope, $scope) {
         does not exist, this means that our user table has been update.
         So, we load it again.
         */
-        if ((!ctrl.users.has(ctrl.item.modifiedBy)) || (!ctrl.users.has(ctrl.item.createdBy))) {
-            $rootScope.LoadUsers();
-        } else {
-            ctrl.user = ctrl.users.get(ctrl.item.modifiedBy);
-            ctrl.created = ctrl.users.get(ctrl.item.createdBy);
-        }
+        if (ctrl.users) {
+            if ((!ctrl.users.has(ctrl.item.modifiedBy)) || (!ctrl.users.has(ctrl.item.createdBy))) {
+                $rootScope.LoadUsers();
+            } else {
+                ctrl.user = ctrl.users.get(ctrl.item.modifiedBy);
+                ctrl.created = ctrl.users.get(ctrl.item.createdBy);
+            }
+        };
     }
 }
 

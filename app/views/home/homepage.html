@@ -24,7 +24,7 @@
            <list-item ng-repeat="file in files | limitTo: limit" item="file" users='mapped'></list-item>
          </div>
          <div ng-if="!users && !loading" class="collapsible" id="file-list">
-           <list-item ng-repeat="file in files | limitTo: limit" item="file" users='false'></list-item>
+           <list-item ng-repeat="file in files | limitTo: limit" item="file" users='users'></list-item>
          </div>
          <a ng-if="collapsed" type="button" class="btn btn-primary btn-viewall" name="button" ng-click="viewAll(undefined)">View all content</a>
          <a ng-if="!collapsed" type="button" class="btn btn-primary btn-viewall" name="button" ng-click="viewAll(5)">Collapse</a>

@@ -50,9 +50,6 @@ angular.module('iSite.home', ['ngRoute', 'ui.router'])
 
         $scope.viewAll = function(limit) {
 
-            var $httpDefautlCache = $cacheFactory.get('$http');
-            console.log($httpDefautlCache.get(WebService.Endpoint('/users')));
-
             $scope.limit = limit;
             if (limit) {
                 $scope.collapsed = true;
