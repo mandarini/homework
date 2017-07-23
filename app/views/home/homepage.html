@@ -32,7 +32,7 @@
     </div>
     <div class="col-md-4 custom panel panel-default">
       <h3>File Types</h3>
-      <type ng-repeat="one in types" type="one" index="$index"></type>
+      <type ng-repeat="one in types" type="one" index="$index" ng-click="loadFiles(one.id)" data-toggle="tooltip" data-placement="top" title="{{one.description}}"></type>
     </div>
   </div>
 </div>
