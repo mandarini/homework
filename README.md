@@ -1,11 +1,11 @@
 # iSite
 
-[Description](#description)
-[Features](#features)
-[Technologies used](#technologies-used)
-[Testing](#testing)
-[How to Run](#how-to-run)
-[Prerequisites](#prerequisites)
+1. [Description](#description)
+2. [Features](#features)
+3. [Technologies used](#technologies-used)
+4. [Testing](#testing)
+5. [How to Run](#how-to-run)
+6. [Prerequisites](#prerequisites)
 
 ## Description
 This is an application which aims at showcasing some front-end development skills.
